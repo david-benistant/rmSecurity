@@ -1,0 +1,18 @@
+#!/usr/bin/ python
+import sys
+import os
+
+rm_list = os.listdir("~/.local/share/Trash/files")
+higher = 0
+
+for i in rm_list:
+    try:
+        if (int(i) > higher):
+            higher = int(i)
+    except:
+        higher = higher
+
+if (len(sys.argv) > 1):
+    os.mkdir("~/.local/share/Trash/files/" + str(higher + 1))
+for i in sys.argv[1:]:
+    os.system("mv -t ~/.local/share/Trash/files/" + str(higher + 1) + " " + i)
