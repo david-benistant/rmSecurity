@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sudo cp remove /bin/
+sudo cp remove /usr/bin/
 
 echo "put 'alias rm=\"remove\"' in your bashrc"

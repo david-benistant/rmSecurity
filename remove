@@ -1,8 +1,8 @@
-#!/usr/bin/ python
+#!/usr/bin/env python
 import sys
 import os
 
-rm_list = os.listdir("~/.local/share/Trash/files")
+rm_list = os.listdir(os.getenv('HOME') + "/.local/share/Trash/files")
 higher = 0
 
 for i in rm_list:
@@ -13,6 +13,8 @@ for i in rm_list:
         higher = higher
 
 if (len(sys.argv) > 1):
-    os.mkdir("~/.local/share/Trash/files/" + str(higher + 1))
+    os.mkdir(os.getenv('HOME') + "/.local/share/Trash/files/" + str(higher + 1))
 for i in sys.argv[1:]:
-    os.system("mv -t ~/.local/share/Trash/files/" + str(higher + 1) + " " + i)
+    os.system("mv -t " + os.getenv('HOME') + "/.local/share/Trash/files/" + str(higher + 1) + " " + i)
+
+#
