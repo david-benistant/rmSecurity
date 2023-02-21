@@ -16,5 +16,3 @@ if (len(sys.argv) > 1):
     os.mkdir(os.getenv('HOME') + "/.local/share/Trash/files/" + str(higher + 1))
 for i in sys.argv[1:]:
     os.system("mv -t " + os.getenv('HOME') + "/.local/share/Trash/files/" + str(higher + 1) + " " + i)
-
-#
